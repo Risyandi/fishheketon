@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta charset="utf-8">
+            <meta name="description" content="Sites For Fishackaton">
+            <meta name="author" content="kembung">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Ultimate solution for fisherman</title>
+            <link rel="stylesheet" type="text/css" href="../static/style/style.css">
+            {{plinemap.js}}
+    </head>
+    <body>
+        <div class="wrapper_result">
+            <div class="content_result">
+            <div class="title">
+                <h1>Fishing history</h1>
+                <h2>Map</h2>
+            </div>
+            <div class="title">
+                <div class="data_profile">
+                    Name    : Budi raharjo</br>
+                    Address : Tulungagung</br>
+                    Id      : 123xb </br>
+                </div>
+                <div class="profile">
+                    <img src="../static/images/budi_anduk.JPG" height="60" width="60"></br>
+                </div>
+            </div>
+            <div class="title">
+                <table style="width:100%">
+                  <tr>
+                    <th>Date</th>
+                    <th>Fishing Trip Length</th> 
+                    <th>Total Days</th>
+                    <th>total Catch</th>
+                    <th>Fish Species</th>
+                  </tr>
+                  <tr>
+                    <td>2018-10-January</td>
+                    <td>28 Km</td>
+                    <td>63 days</td>
+                    <td>346.25 KG</td>
+                    <td>4 species</td>
+                  </tr>
+                </table>              
+            </div>
+            <hline>
+            <br/>
+            <div>
+                {{ plinemap.html }}
+            </div>
+            </div>
+        </div>
+    </body>
+
+
+</html>

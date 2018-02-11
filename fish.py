@@ -48,9 +48,9 @@ def person():
         lng=116.514596,
         style=(
             "height:80%;"
-            "width:80%;"
+            "width:50%;"
             "top:100;"
-            "left:50;"
+            "left:10;"
             "position:absolute;"
             "z-index:200;"
         ),
@@ -72,69 +72,210 @@ def person():
 
 @app.route("/gov")
 def gov():
-    mymap = Map(
-            identifier="view-side",  # for DOM element
-            varname="mymap",  # for JS object name
-            lat=37.4419,
-            lng=-122.1419,
-            markers=[(37.4419, -122.1419)]
-        )
-
 
     polyline = {
-        'stroke_color': '#0AB0DE',
+    'stroke_color': '#0AB0DE',
+    'stroke_opacity': 1.0,
+    'stroke_weight': 3,
+    'path': [{'lat': -8.831329, 'lng': 116.514596},
+             {'lat': -8.824975, 'lng': 116.514190},
+             {'lat': -8.819457, 'lng': 116.515542},
+             {'lat': -8.815350, 'lng': 116.510754},
+             {'lat': -8.819703, 'lng': 116.502612},
+             {'lat': -8.827473, 'lng': 116.511321},
+             {'lat': -8.831329, 'lng': 116.514596},
+             {'lat': -8.831877, 'lng': 116.514790}
+             ]
+    }
+    
+    polyline2 = {
+        'stroke_color': '#08004b',
         'stroke_opacity': 1.0,
         'stroke_weight': 3,
-        'path': [{'lat': 33.678, 'lng': -116.243},
-                 {'lat': 33.679, 'lng': -116.244},
-                 {'lat': 33.680, 'lng': -116.250},
-                 {'lat': 33.681, 'lng': -116.239},
-                 {'lat': 33.678, 'lng': -116.243}]
+        'path': [{'lat': -8.835159, 'lng': 116.512373},
+                 {'lat': -8.837067, 'lng': 116.510331},
+                 {'lat': -8.835720, 'lng': 116.507836},
+                 {'lat': -8.831951, 'lng': 116.500989},
+                 {'lat': -8.828103, 'lng': 116.509538},
+                 {'lat': -8.832939, 'lng': 116.510830},
+                 {'lat': -8.835159, 'lng': 116.512373}]
+
     }
 
-    path1 = [(33.665, -116.235), (33.666, -116.256),
-             (33.667, -116.250), (33.668, -116.229)]
 
-    path2 = ((33.659, -116.243), (33.660, -116.244),
-             (33.649, -116.250), (33.644, -116.239))
+    polyline3 = {
+        'stroke_color': '#008080',
+        'stroke_opacity': 1.0,
+        'stroke_weight': 3,
+        'path': [{'lat': -8.831322, 'lng': 116.514715},
+                 {'lat': -8.829985, 'lng': 116.510761},
+                 {'lat': -8.829985, 'lng': 116.510761},
+                 {'lat': -8.824851, 'lng': 116.504635},
+                 {'lat': -8.825290, 'lng': 116.509613},
+                 {'lat': -8.825290, 'lng': 116.509613},
+                 {'lat': -8.831322, 'lng': 116.514715},
+                 {'lat': -8.831739, 'lng': 116.515015}
+                 ]
+    }
 
-    path3 = ([33.688, -116.243], [33.680, -116.244],
-             [33.682, -116.250], [33.690, -116.239])
+    polyline5 = {
+        'stroke_color': '#06c253',
+        'stroke_opacity': 1.0,
+        'stroke_weight': 3,
+        'path': [{'lat': -8.830843, 'lng': 116.498367},
+                 {'lat': -8.825618, 'lng': 116.502234},
+                 {'lat': -8.832493, 'lng': 116.504636},
+                 {'lat': -8.833660, 'lng': 116.500929},
+                 {'lat': -8.832515, 'lng': 116.499212},
+                 {'lat': -8.830843, 'lng': 116.498367}
+                 ]
+    }
+    polyline_fill = {
+    'stroke_color': '#008080',
+    'stroke_opacity': 1.0,
+    'fill_color': '#ABC321',
+    'stroke_weight': 3,
+    'path': [{'lat': -8.822147, 'lng': 116.506429},
+             {'lat': -8.823437, 'lng': 116.505405},
+             {'lat': -8.824077, 'lng': 116.505870},
+             {'lat': -8.823157, 'lng': 116.507651},
+             {'lat': -8.822147, 'lng': 116.506429},
 
-    path4 = [[33.690, -116.243], [33.691, -116.244],
-             [33.692, -116.250], [33.693, -116.239]]
+             ]
+    }
+    polyline_fill2 = {
+    'stroke_color': '#f1554d',
+    'stroke_opacity': 1.0,
+    'fill_color': '#ff9b9b',
+    'stroke_weight': 3,
+    'path': [{'lat': -8.828370, 'lng': 116.503255},
+             {'lat': -8.828644, 'lng': 116.504512},
+             {'lat': -8.829190, 'lng': 116.504287},
+             {'lat': -8.829291, 'lng': 116.503773},
+             {'lat': -8.829015, 'lng': 116.503451},
+             {'lat': -8.828370, 'lng': 116.503255}
+             ]
+    }
+
+
+    polyline_fill22 = {
+    'stroke_color': '#f1554d',
+    'stroke_opacity': 1.0,
+    'fill_color': '#ff9b9b',
+    'stroke_weight': 3,
+    'path': [{'lat': -8.824897, 'lng': 116.502240},
+             {'lat': -8.825215, 'lng': 116.503055},
+             {'lat': -8.825480, 'lng': 116.502658},
+             {'lat': -8.825618, 'lng': 116.502234},
+             {'lat': -8.824897, 'lng': 116.502240}
+             ]
+    }
+
 
     plinemap = Map(
         identifier="plinemap",
         varname="plinemap",
-        lat=33.678,
-        lng=-116.243,
-        polylines=[polyline, path1, path2, path3, path4]
-    )
-
-
-    realmap = Map(
-        identifier="realmap",
-        varname="realmap",
-        lat=33.678,
-        lng=-116.243,
+        lat=-8.831329,
+        lng=116.514596,
+        style=(
+            "height:80%;"
+            "width:50%;"
+            "top:100;"
+            "left:10;"
+            "position:absolute;"
+            "z-index:200;"
+        ),
         markers=[
               {
-                 'icon': 'https://files.slack.com/files-pri/T02MNHHJA-F96EHA14Y/salling_50x50.png',             
-                 'lat': 33.678,
-                 'lng': -116.243,
-                 'infobox': "<b>Budi julaeha<br/>pangandaran</b>"
-              }
-          ]
-        )
+                 'icon': 'https://files.slack.com/files-pri/T02MNHHJA-F971R9ZFD/ship.png',             
+                 'lat': -8.831877,
+                 'lng': 116.514790,
+                 'infobox': "<img src='/static/images/budi_anduk.JPG' width='70%' height='80%'/> \
+                            <div> \
+                            <font size='20'> \
+                            Budi zunaidi </br> \
+                            Domisili : Kerupukan </br> \
+                            Tangkapan bulan ini : 5 ton \
+                            Jenis ikan : 4 jenis \
+                            Tanggal lapor terakhir : Senin 23 Oktober 2017 \
+                            </font></div>"
+              },
+              {
+                 'icon': 'https://files.slack.com/files-pri/T02MNHHJA-F971R9ZFD/ship.png',             
+                 'lat': -8.831951,
+                 'lng': 116.500989,
+                 'infobox': "<img src='/static/images/budi2.jpg' width='70%' height='80%'/> \
+                            <div> \
+                            <font size='20'> \
+                            Ahmad supandi </br> \
+                            Domisili : Jeneng agung </br> \
+                            Tangkapan bulan ini : 1 ton \
+                            Jenis ikan : 2 jenis \
+                            Tanggal lapor terakhir : Sabtu 10 Oktober 2017 \
+                            </font></div>"
+              },
+            {
+                 'icon': 'https://files.slack.com/files-pri/T02MNHHJA-F971R9ZFD/ship.png',             
+                 'lat': -8.831739,
+                 'lng': 116.515015,
+                                'infobox': "<img src='/static/images/bambang3.jpeg' width='70%' height='80%'/> \
+                            <div> \
+                            <font size='20'> \
+                            Bambang </br> \
+                            Domisili : Semangkit agung </br> \
+                            Tangkapan bulan ini : 0.5 ton \
+                            Jenis ikan : 1 jenis \
+                            Tanggal lapor terakhir : Selasa 13 Oktober 2017 \
+                            </font></div>"
+             },
+              {
+                 'icon': 'https://files.slack.com/files-pri/T02MNHHJA-F971R9ZFD/ship.png',             
+                 'lat': -8.830843,
+                 'lng': 116.498367,
+                 'infobox': "<img src='/static/images/budi_anduk.JPG' width='70%' height='80%'/> \
+                            <div> \
+                            <font size='20'> \
+                            Budi zunaidi </br> \
+                            Domisili : Kerupukan </br> \
+                            Tangkapan bulan ini : 5 ton \
+                            Jenis ikan : 4 jenis \
+                            Tanggal lapor terakhir : Senin 23 Oktober 2017 \
+                            </font></div>"
+              },
+                  {
+                'icon': 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                'lat':  -8.823247,
+                'lng':  116.506267,
+                'infobox': "<img src='/static/images/googly.jpg' width='70%' height='80%'/> \
+                            <div> \
+                            <font size='20'> \
+                            Ikan tongkol </br> \
+                            musim : 10 Januari - 23 Maret </br> \
+                            kapasitas : 20 ton \
+                            </font></div>"
+            },
+              {
+                'icon': 'http://maps.google.com/mapfiles/ms/icons/red-dot.png',
+                'lat':  -8.828748,
+                'lng':  116.504108,
+                'infobox': "<img src='/static/images/kembong.jpg' width='70%' height='80%'/> \
+                            <div> \
+                            <font size='20'> \
+                            Ikan kembung </br> \
+                            musim : 23 Maret - 5 Agustus </br> \
+                            kapasitas : 50 ton \
+                            </font></div>"
+            },
+          ],
+        polylines=[polyline,polyline2,polyline3,polyline5],
+        polygons=[polyline_fill,polyline_fill2,polyline_fill22]
+    )
+
 
     return render_template(
         'fish.html',
-        mymap=mymap,
-        plinemap=plinemap,
-        realmap=realmap
+        plinemap=plinemap
     )
-
 @app.route('/')
 @app.route('/home')
 def home():
@@ -187,8 +328,6 @@ def fullmap():
         # zoom="5"
     )
     return render_template('example_fullmap.html', fullmap=fullmap)
-
-
 
 
 @app.route("/trial")
