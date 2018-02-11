@@ -52,7 +52,7 @@ def person():
             "top:100;"
             "left:10;"
             "position:absolute;"
-            "z-index:200;"
+            "z-index:200;"  
         ),
         markers=[
               {
@@ -178,10 +178,10 @@ def gov():
         lat=-8.831329,
         lng=116.514596,
         style=(
-            "height:80%;"
-            "width:50%;"
+            "height:100%;"
+            "width:100%;"
             "top:100;"
-            "left:10;"
+            "left:0;"
             "position:absolute;"
             "z-index:200;"
         ),
@@ -273,7 +273,7 @@ def gov():
 
 
     return render_template(
-        'fish.html',
+        'gov.html',
         plinemap=plinemap
     )
 @app.route('/')
