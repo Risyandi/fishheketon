@@ -1,15 +1,26 @@
 <!DOCTYPE html>
-        <html>
+<html>
     <head>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta charset="utf-8">
+            <meta name="description" content="Sites For Fishackaton">
+            <meta name="author" content="kembung">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>Ultimate solution for fisherman</title>
+            <link rel="stylesheet" type="text/css" href="../static/style/style.css">
     </head>
     <body>
-        <form action="{{ url_for('middle') }}" method="POST">
-            Input unique code: 
-            <input type="text" name="ucode"><br/>            
-            <input type="submit" value="submit">
-        </form>
+        <div class="wrapper_home">
+            <div class="content_home">
+                <form action="{{ url_for('middle') }}" method="POST">
+                    <div class="title">Input Unique Code</div>
+                    <div class="input"> 
+                        <input type="text" name="ucode">
+                        <input type="submit" value="submit">
+                    </div> 
+                </form>
+            </div>
+        </div>
     </body>
 </html>
